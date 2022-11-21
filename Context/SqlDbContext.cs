@@ -8,6 +8,7 @@ public class SqlDbContext : DbContext
     public SqlDbContext(DbContextOptions<SqlDbContext> options)
         : base(options)
     {
+        
     }
 
     public DbSet<Company> Company { get; set; }

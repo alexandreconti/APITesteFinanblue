@@ -3,7 +3,7 @@ using ApiTeste.Models;
 
 namespace ApiTeste.Repositories;
 
-public class CompanyRepository : IDisposable, IRepository<Company> 
+public class CompanyRepository : IRepository<Company> 
 {
     protected readonly SqlDbContext _context;
     public CompanyRepository(SqlDbContext context)
@@ -20,12 +20,6 @@ public class CompanyRepository : IDisposable, IRepository<Company>
     public void Delete(Company companyToDelete)
     {
         _context.Company.Remove(companyToDelete);
-    }
-
-    public void Dispose()
-    {
-        _context.SaveChanges();
-        _context.Dispose();
     }
 
     public List<Company> GetAll()
