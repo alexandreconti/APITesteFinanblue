@@ -2,7 +2,7 @@ namespace ApiTeste.Repositories;
 
 public interface IRepository<T> where T : class
 {
-    List<T> GetAll();
+    List<T>? GetAll();
     T GetById(int id);
     void Add(T entity);
     void Delete(T entityToDelete);

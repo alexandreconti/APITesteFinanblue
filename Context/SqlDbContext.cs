@@ -11,9 +11,9 @@ public class SqlDbContext : DbContext
         
     }
 
-    public DbSet<Company> Companies { get; set; }
+    public DbSet<Company>? Companies { get; set; }
 
-    public DbSet<Product> Products { get; set; }
+    public DbSet<Product>? Products { get; set; }
 
-    public DbSet<Sale> Sales { get; set; }
+    public DbSet<Sale>? Sales { get; set; }
 }

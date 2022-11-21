@@ -14,7 +14,8 @@ public class ProductRepository : IRepository<Product>
 
     public void Add(Product entity)
     {
-        throw new NotImplementedException();
+        _context.Products?.Add(entity);
+        _context.SaveChanges();
     }
 
     public void Delete(Product entityToDelete)
@@ -22,9 +23,9 @@ public class ProductRepository : IRepository<Product>
         throw new NotImplementedException();
     }
 
-    public List<Product> GetAll()
+    public List<Product>? GetAll()
     {
-        throw new NotImplementedException();
+        return _context.Products?.Select(x => x).ToList();
     }
 
     public Product GetById(int id)

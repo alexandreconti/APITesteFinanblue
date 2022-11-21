@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ApiTeste.Models;
 using ApiTeste.Repositories;
-using System.ComponentModel.DataAnnotations;
 using FluentValidation;
 
 namespace ApiTeste.Controllers;
@@ -28,7 +27,7 @@ private readonly IRepository<Company> _companyRepository;
         return Ok(companies);
     }
 
-    [HttpPost(Name = "CreateProduct")]
+    [HttpPost(Name = "CreateCompanies")]
     public async Task<ActionResult<IEnumerable<Company>>> AddCompany(Company company)
     {
         var validationResult = await _validator.ValidateAsync(company);

@@ -11,10 +11,11 @@ public class SaleRepository : IRepository<Sale>
     {
         _context = context;
     }
-    
+
     public void Add(Sale entity)
     {
-        throw new NotImplementedException();
+        _context.Sales?.Add(entity);
+        _context.SaveChanges();
     }
 
     public void Delete(Sale entityToDelete)
@@ -22,9 +23,9 @@ public class SaleRepository : IRepository<Sale>
         throw new NotImplementedException();
     }
 
-    public List<Sale> GetAll()
+    public List<Sale>? GetAll()
     {
-        throw new NotImplementedException();
+         return _context.Sales?.Select(x => x).ToList();
     }
 
     public Sale GetById(int id)
