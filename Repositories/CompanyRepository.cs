@@ -13,18 +13,18 @@ public class CompanyRepository : IRepository<Company>
 
     public void Add(Company company)
     {
-        _context.Company.Add(company);
+        _context.Companies.Add(company);
         _context.SaveChanges();
     }
 
     public void Delete(Company companyToDelete)
     {
-        _context.Company.Remove(companyToDelete);
+        _context.Companies.Remove(companyToDelete);
     }
 
     public List<Company> GetAll()
     {
-        return _context.Company.Select(x => x).ToList();
+        return _context.Companies.Select(x => x).ToList();
     }
 
     public Company GetById(int id)
