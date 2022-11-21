@@ -1,5 +1,6 @@
 using ApiTeste.Context;
 using ApiTeste.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiTeste.Repositories;
 
@@ -8,9 +9,8 @@ public class SaleRepository : IRepository<Sale>
     protected readonly SqlDbContext _context;
 
     public SaleRepository(SqlDbContext context)
-    {
-        _context = context;
-    }
+        => _context = context;
+    
 
     public void Add(Sale entity)
     {
@@ -25,7 +25,8 @@ public class SaleRepository : IRepository<Sale>
 
     public List<Sale>? GetAll()
     {
-         return _context.Sales?.Select(x => x).ToList();
+         return _context.Sales?.Include(y => y.Product).Select(x => x)
+         .ToList();
     }
 
     public Sale GetById(int id)

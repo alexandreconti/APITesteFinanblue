@@ -3,13 +3,12 @@ using ApiTeste.Models;
 
 namespace ApiTeste.Repositories;
 
-public class CompanyRepository : IRepository<Company> 
+public class CompanyRepository : IRepository<Company>
 {
     protected readonly SqlDbContext _context;
-    public CompanyRepository(SqlDbContext context)
-    {
-        _context = context;
-    }
+    public CompanyRepository(SqlDbContext context) 
+        => _context = context;
+
 
     public void Add(Company company)
     {

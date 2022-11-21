@@ -4,7 +4,7 @@ public class Sale
 {
     public int Id { get; set; }
 
-    public int amount { get; set; }
+    public int Amount { get; set; }
 
-    public Product? product { get; set; }
+    public virtual Product? Product { get; set; }
 }

@@ -7,8 +7,8 @@ public class SaleValidator : AbstractValidator<Sale>
 {
     public SaleValidator()
     {
-        RuleFor(x => x.amount)
-            .Empty()
+        RuleFor(x => x.Amount)
+            .NotEmpty()
             .WithMessage("Amount can not have empty");
     }
 }

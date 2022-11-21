@@ -8,9 +8,7 @@ public class ProductRepository : IRepository<Product>
     protected readonly SqlDbContext _context;
 
     public ProductRepository(SqlDbContext context)
-    {
-        _context = context;
-    }
+        => _context = context;
 
     public void Add(Product entity)
     {
