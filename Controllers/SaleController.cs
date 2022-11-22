@@ -24,7 +24,7 @@ public class SaleController : ControllerBase
     {
         var sales = _saleRepository.GetAll();
 
-        return Ok(sales);
+        return Ok(await Task.FromResult(sales));
     }
 
     [HttpPost(Name = "CreateSale")]

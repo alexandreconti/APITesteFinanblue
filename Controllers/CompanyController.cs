@@ -24,7 +24,7 @@ private readonly IRepository<Company> _companyRepository;
     {
         var companies = _companyRepository.GetAll();
 
-        return Ok(companies);
+        return Ok(await Task.FromResult(companies));
     }
 
     [HttpPost(Name = "CreateCompanies")]

@@ -25,7 +25,7 @@ public class ProductController : ControllerBase
     {
         var products = _productRepository.GetAll();
 
-        return Ok(products);
+        return Ok(await Task.FromResult(products));
     }
 
     [HttpPost(Name = "CreateProduct")]
