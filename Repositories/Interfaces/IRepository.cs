@@ -1,4 +1,4 @@
-namespace ApiTeste.Repositories;
+namespace ApiTeste.Repositories.Interfaces;
 
 public interface IRepository<T> where T : class
 {

@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using ApiTeste.Models;
 using ApiTeste.Repositories;
 using FluentValidation;
+using ApiTeste.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiTeste.Controllers;
 
@@ -20,6 +22,8 @@ private readonly IRepository<Company> _companyRepository;
     }
 
     [HttpGet(Name = "GetAllCompanies")]
+    [Authorize(Roles = "manager")]
+    // salvar
     public async Task<ActionResult<IEnumerable<Company>>> GetAllCompanies()
     {
         var companies = _companyRepository.GetAll();

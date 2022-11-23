@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using ApiTeste.Models;
 using ApiTeste.Repositories;
 using FluentValidation;
+using ApiTeste.Repositories.Interfaces;
 
 namespace ApiTeste.Controllers;
 

@@ -1,5 +1,6 @@
 using ApiTeste.Context;
 using ApiTeste.Models;
+using ApiTeste.Repositories.Interfaces;
 
 namespace ApiTeste.Repositories;
 
