@@ -29,7 +29,7 @@ public class UserController : ControllerBase
     public async Task<ActionResult<dynamic>> Authenticate([FromBody] User model)
     {
         // Recupera o usuário
-        var user = _userRepository.Get(model.Username, model.Password);
+        var user = await Task.FromResult(_userRepository.Get(model.Username, model.Password));
 
         // Verifica se o usuário existe
         if (user == null)
